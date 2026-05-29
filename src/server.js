@@ -1,3 +1,6 @@
+require('dotenv').config();
+require('./workers/classificationWorker'); // start worker
+
 const app = require('./app');
 const PORT = process.env.PORT || 3000;
 
