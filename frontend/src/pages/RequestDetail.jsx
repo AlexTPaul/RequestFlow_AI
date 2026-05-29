@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api/axios';
 import StatusBadge from '../components/StatusBadge';
@@ -10,24 +10,24 @@ export default function RequestDetail() {
   const [note, setNote] = useState('');
   const [status, setStatus] = useState('');
 
-  const fetch = async () => {
-    const res = await api.get(`/requests/${id}`);
-    setData(res.data);
-    setStatus(res.data.request.status);
-  };
+const fetchData = useCallback(async () => {
+  const res = await api.get(`/requests/${id}`);
+  setData(res.data);
+  setStatus(res.data.request.status);
+}, [id]);
 
-  useEffect(() => { fetch(); }, [id]);
+useEffect(() => { fetchData(); }, [fetchData]);
 
   const updateStatus = async () => {
     await api.patch(`/requests/${id}/status`, { status });
-    fetch();
+    fetchData();
   };
 
   const addNote = async () => {
     if (!note.trim()) return;
     await api.post(`/requests/${id}/notes`, { body: note });
     setNote('');
-    fetch();
+    fetchData();
   };
 
   if (!data) return <p style={{ padding:'2rem' }}>Loading...</p>;
