@@ -163,6 +163,14 @@ router.patch('/:id/status', auth, [
       [id, 'status_change', oldStatus, status, req.user.id]
     );
 
+    // After updating status in DB
+    const io = req.app.get('io');
+    if (io) io.emit('request:updated', {
+      requestId: id,
+      status: status,
+      updatedBy: req.user.email
+    });
+    
     res.json({ message: 'Status updated', old_status: oldStatus, new_status: status });
 
   } catch (err) { next(err); }
