@@ -9,7 +9,10 @@ const app = express();
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://request-flow-ai.vercel.app' // ← exact URL
+  ],
   credentials: true
 }));
 app.use(express.json());

@@ -10,7 +10,10 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',  // ← same frontend URL
+    origin: [
+      'http://localhost:3000',
+      'https://request-flow-ai.vercel.app' // ← exact URL
+    ],
     methods: ['GET', 'POST'],
     credentials: true
   }
