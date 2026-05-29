@@ -26,6 +26,7 @@ app.get('/health', (req, res) => {
 
 // Routes (you'll add these next)
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/requests', require('./routes/requests'));
 
 // Global error handler
 app.use((err, req, res, next) => {
