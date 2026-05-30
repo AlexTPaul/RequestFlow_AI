@@ -148,7 +148,7 @@ be passed as data content, not system instructions.
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/RequestFlow_AI.git
+git clone https://github.com/AlexTPaul/RequestFlow_AI.git
 cd RequestFlow_AI
 
 # Install backend dependencies
