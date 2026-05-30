@@ -8,6 +8,16 @@ A mini AI-powered customer request routing system
 - **Health Check:** https://requestflow-ai.onrender.com/health
 
 ---
+## Demo Credentials
+
+Use these credentials to log in to the admin dashboard:
+
+| Field    | Value           |
+|----------|-----------------|
+| Email    | admin@test.com  |
+| Password | test123         |
+
+> Note: This is a demo account for assessment purposes only.
 
 ## Features
 - Customer request intake via REST API
