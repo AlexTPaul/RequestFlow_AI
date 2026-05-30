@@ -22,7 +22,7 @@ export default function Login() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h2 style={styles.title}>Cognifyr Admin</h2>
+        <h2 style={styles.title}>RequestFlow AI</h2>
         <form onSubmit={handleLogin}>
           <input style={styles.input} type="email" placeholder="Email"
             value={email} onChange={e => setEmail(e.target.value)} required />

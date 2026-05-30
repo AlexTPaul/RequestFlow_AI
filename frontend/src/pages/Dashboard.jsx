@@ -37,7 +37,7 @@ export default function Dashboard() {
     <div style={styles.container}>
       {/* Header */}
       <div style={styles.header}>
-        <h1 style={styles.logo}>Cognifyr</h1>
+        <h1 style={styles.logo}>RequestFlow AI</h1>
         <div style={{ display:'flex', alignItems:'center', gap:'1rem' }}>
           <RealtimeIndicator connected={connected} />
           <button onClick={logout} style={styles.logoutBtn}>Logout</button>
